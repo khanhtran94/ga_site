@@ -3,7 +3,7 @@
 module.exports = {
   url: 'https://happy-roentgen-f8171a.netlify.app/',
   pathPrefix: '/',
-  title: 'Blog by John Doe',
+  title: 'Blog by Khanhtt',
   subtitle: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
   copyright: '© All rights reserved.',
   disqusShortname: '',
@@ -26,7 +26,7 @@ module.exports = {
   ],
   author: {
     name: 'Khanhtt',
-    photo: '/photo.jpg',
+    photo: '/person.png',
     bio: 'you will always be more effective in your development work  \
       if you more completely understand how your code works, than you are solely \
       just getting it to produce a desired outcome',
