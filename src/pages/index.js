@@ -11,7 +11,7 @@ export default ({ data }) => (
         </tr>
       </thead>
       <tbody>
-        {data.allFile.edges.map(({ node }) =>
+        {data.allMarkdownRemark.edges.map(({ node }) =>
           <tr>
             <td>{node.relativePath}</td>
             <td>{node.extension}</td>
@@ -24,16 +24,20 @@ export default ({ data }) => (
 )
 
 export const query = graphql`
-  query FirstQuery {
-  allFile {
+  query FirstQuery{
+  allMarkdownRemark {
     edges {
       node {
-        relativePath
-        extension
-        prettySize
+        id
+        html
+        frontmatter {
+          title
+          author
+        }
       }
     }
   }
 }
+
 
 `
