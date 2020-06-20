@@ -2,24 +2,17 @@ import React from "react"
 
 export default ({ data }) => (
   <div style={{ color: 'tomato' }}>
-    <table>
-      <thead>
-        <tr>
-          <th>relativePath</th>
-          <th>extension</th>
-          <th>prettySize</th>
-        </tr>
-      </thead>
-      <tbody>
-        {data.allMarkdownRemark.edges.map(({ node }) =>
-          <tr>
-            <td>{node.relativePath}</td>
-            <td>{node.extension}</td>
-            <td>{node.prettySize}</td>
-          </tr>
-        )}
-      </tbody>
-    </table>
+
+
+    {data.allMarkdownRemark.edges.map(({ node }) =>
+      <div>
+        <h1>{node.frontmatter.title}</h1>
+        <h2>{node.frontmatter.author}</h2>
+        <br></br>
+        {node.rawMarkdownBody}
+      </div>
+
+    )}
   </div>
 )
 
@@ -29,15 +22,16 @@ export const query = graphql`
     edges {
       node {
         id
-        html
         frontmatter {
           title
           author
         }
+        rawMarkdownBody
       }
     }
   }
 }
+
 
 
 `
