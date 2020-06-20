@@ -2,10 +2,24 @@ import React from "react"
 
 export default ({ data }) => (
   <div style={{ color: 'tomato' }}>
-    <h1>Hello word</h1>
-    <p>This is a paragraph</p>
-    <h2>{data.site.siteMetadata.title}</h2>
-    <h2>{data.site.siteMetadata.author}</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>relativePath</th>
+          <th>extension</th>
+          <th>prettySize</th>
+        </tr>
+      </thead>
+      <tbody>
+        {data.allFile.edges.map(({ node }) =>
+          <tr>
+            <td>{node.relativePath}</td>
+            <td>{node.extension}</td>
+            <td>{node.prettySize}</td>
+          </tr>
+        )}
+      </tbody>
+    </table>
   </div>
 )
 
